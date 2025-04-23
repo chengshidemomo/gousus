@@ -23,9 +23,9 @@ func FileMD5(filename string) (string, error) {
 	return hex.EncodeToString(h.Sum(nil)), nil
 }
 
-func StringMD5(filename string) (string, error) {
+func StringMD5(filename string) string {
 	md6 := md5.New()
 	md6.Write([]byte(filename))
-	return hex.EncodeToString(md6.Sum(nil)), nil
+	return hex.EncodeToString(md6.Sum(nil))
 
 }
